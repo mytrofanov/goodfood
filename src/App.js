@@ -21,7 +21,6 @@ function App() {
 
     useEffect(()=>{
         if (food.length > 1) {setLoading(false)}
-        console.log('App food: ', food)
     },[food])
 
 
@@ -29,8 +28,8 @@ function App() {
 
     return (
         <div className={styles.app}>
-            {loading && <div>Loading ...</div>}
-            <Cards food={food}/>
+             <Cards food={food} loading={loading}/>
+
         </div>
     );
 }
