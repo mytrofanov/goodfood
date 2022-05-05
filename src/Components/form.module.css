@@ -27,6 +27,9 @@
 
     color: rgba(0, 0, 0, 0.5);
 }
+.input :invalid{
+    border: 2px red;
+}
 
 .orderButton{
     display: flex;

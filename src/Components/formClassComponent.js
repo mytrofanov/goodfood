@@ -1,4 +1,5 @@
 import React from 'react'
+import redCross from './../img/redCross.svg'
 
 class UserForm extends React.Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class UserForm extends React.Component {
     render() {
         // цвет границы для поля для ввода имени
         let nameColor = this.state.nameValid===true?"green":"red";
+        let redCross = !this.state.nameValid && redCross
         // цвет границы для поля для ввода возраста
         let ageColor = this.state.ageValid===true?"green":"red";
         return (

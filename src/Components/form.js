@@ -8,14 +8,20 @@ const Form = () => {
 
     return (
         <div className={styles.formBlock}>
+            <form action="">
             <input
+                required
+                pattern="/^[a-zA-Z]+$/"
                 type="text" id={'name'}
                 placeholder={'Name'}
-                className={styles.input}/>
-            value={name}
-            onChange={e =>
-            setName(e.target.value)}
+                className={styles.input}
+                value={name}
+                onChange={e =>
+                    setName(e.target.value)}
+            />
+
             <input
+                required
                 type="text"
                 id={'number'}
                 placeholder={'Number'}
@@ -25,6 +31,7 @@ const Form = () => {
                     setNumber(e.target.value)}
             />
             <input type="submit" className={styles.orderButton} value={'ORDER'}/>
+            </form>
         </div>
     );
 };

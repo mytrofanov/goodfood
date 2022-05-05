@@ -25,7 +25,7 @@ export function MyVerticallyCenteredModal(props) {
                     <div className={styles.centeredPrice}>
                         <PriceBlock price={4.99}/>
                     </div>
-                    <UserForm name="" age="0"/>
+                    <Form/>
                 </div>
             </Modal.Body>
         </Modal>
