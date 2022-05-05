@@ -7,20 +7,20 @@ export const foodSlice = createSlice({
         food: [],
     },
     // reducers: {
-    //     fetchFood: (state, action) => {
-    //         state.food += action.payload
+    //     setFetching: (state, action) => {
+    //         state.isFetching = action.payload
     //     },
     // },
     extraReducers: (builder) => {
         // Add reducers for additional action types here, and handle loading state as needed
         builder.addCase(fetchFoodFromServer.fulfilled, (state, action) => {
             // Add user to the state array
-            state.food.push(action.payload)
+            state.food = action.payload
         })
     },
 })
 
-export const { fetchFood } = foodSlice.actions
+export const { setFetching } = foodSlice.actions
 
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
@@ -31,7 +31,6 @@ export const fetchFoodFromServer = createAsyncThunk(
     'food/fetchFood',
     async () => {
         const response = await foodAPI.eatable()
-        console.log('Thunk data: ', response)
         return response
     }
 )
@@ -39,6 +38,6 @@ export const fetchFoodFromServer = createAsyncThunk(
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state) => state.counter.value)`
-export const selectFood = (state) => state.foodStore.food
+export const selectorFood = (state) => state.foodStore.food
 
 export default foodSlice.reducer
