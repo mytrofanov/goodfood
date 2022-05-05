@@ -6,6 +6,7 @@ import GoodsTypeName from "./smallComponents/goodsTypeName";
 import GoodsName from "./smallComponents/goodsName";
 import PriceBlock from "./smallComponents/priceBlock";
 import Form from "./form";
+import UserForm from "./formClassComponent";
 
 export function MyVerticallyCenteredModal(props) {
     return (
@@ -24,7 +25,7 @@ export function MyVerticallyCenteredModal(props) {
                     <div className={styles.centeredPrice}>
                         <PriceBlock price={4.99}/>
                     </div>
-                    <Form/>
+                    <UserForm name="" age="0"/>
                 </div>
             </Modal.Body>
         </Modal>
