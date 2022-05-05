@@ -1,9 +1,8 @@
-import {Counter} from "./features/counter/Counter";
-import {Food} from "./features/food/Food";
+import {Cards} from "./features/food/Cards";
 import {fetchFoodFromServer} from "./features/food/foodSlice";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
-
+import styles from './App.module.css'
 
 function App() {
     const dispatch = useDispatch();
@@ -29,9 +28,9 @@ function App() {
 
 
     return (
-        <div>
+        <div className={styles.app}>
             {loading && <div>Loading ...</div>}
-            <Food/>
+            <Cards/>
         </div>
     );
 }

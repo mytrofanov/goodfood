@@ -1,0 +1,14 @@
+.cardsPage {
+    width: 1440px;
+    height: 900px;
+    background-color: #F2F2F2;
+}
+.cardsBlock {
+    width: 79%;
+    top: 11.5%;
+    position: absolute;
+    margin-left: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+
+}
