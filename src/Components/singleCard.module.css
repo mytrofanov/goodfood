@@ -33,6 +33,10 @@
     padding-bottom: 40px;
 }
 
+.singleCardBottom{
+    display: flex;
+    flex-direction: row;
+}
 .priceBlock {
     width: 100%;
     display: flex;

@@ -3,3 +3,11 @@
     top: -10%;
     left: 97%;
 }
+.goodsTitleBlock {
+    width: 288px;
+    text-align: center;
+}
+.centeredPrice{
+    margin-left: 25%;
+    text-align: left;
+}
