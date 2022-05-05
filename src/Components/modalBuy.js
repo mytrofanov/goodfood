@@ -5,6 +5,7 @@ import React from "react";
 import GoodsTypeName from "./smallComponents/goodsTypeName";
 import GoodsName from "./smallComponents/goodsName";
 import PriceBlock from "./smallComponents/priceBlock";
+import Form from "./form";
 
 export function MyVerticallyCenteredModal(props) {
     return (
@@ -23,7 +24,7 @@ export function MyVerticallyCenteredModal(props) {
                     <div className={styles.centeredPrice}>
                         <PriceBlock price={4.99}/>
                     </div>
-
+                    <Form/>
                 </div>
             </Modal.Body>
         </Modal>
