@@ -30,7 +30,7 @@ function App() {
     return (
         <div className={styles.app}>
             {loading && <div>Loading ...</div>}
-            <Cards/>
+            <Cards food={food}/>
         </div>
     );
 }
