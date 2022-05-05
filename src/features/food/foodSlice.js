@@ -5,12 +5,17 @@ export const foodSlice = createSlice({
     name: 'food',
     initialState: {
         food: [],
+        selectedFood: [],
+        cheapestFoodId: null
     },
-    // reducers: {
-    //     setFetching: (state, action) => {
-    //         state.isFetching = action.payload
-    //     },
-    // },
+    reducers: {
+        setSelectedFood: (state, action) => {
+            state.selectedFood = action.payload
+        },
+        setCheapestFood: (state, action) => {
+            state.cheapestFood = action.payload
+        },
+    },
     extraReducers: (builder) => {
         // Add reducers for additional action types here, and handle loading state as needed
         builder.addCase(fetchFoodFromServer.fulfilled, (state, action) => {
@@ -20,7 +25,7 @@ export const foodSlice = createSlice({
     },
 })
 
-export const { setFetching } = foodSlice.actions
+export const { setSelectedFood, setCheapestFood } = foodSlice.actions
 
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This

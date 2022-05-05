@@ -1,5 +1,5 @@
 import {Cards} from "./features/food/Cards";
-import {fetchFoodFromServer} from "./features/food/foodSlice";
+import {fetchFoodFromServer, setCheapestFood} from "./features/food/foodSlice";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import styles from './App.module.css'
@@ -8,6 +8,15 @@ function App() {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(false)
     const food = useSelector(state => state.foodStore.food)
+    const cheapestFood = useSelector(state => state.foodStore.cheapestFood)
+    function findCheapestGoods() {
+        food.forEach((foodItem, index)=>{
+            if (!cheapestFood) {dispatch(setCheapestFood(index))}
+            if (cheapestFood > foodItem.price) {setCheapestFood(index)}
+        })
+    }
+
+
     const startApp = ()=> {
         dispatch(fetchFoodFromServer())
     }
@@ -20,8 +29,12 @@ function App() {
     },[])
 
     useEffect(()=>{
-        if (food.length > 1) {setLoading(false)}
-    },[food])
+        if (food.length > 1) {
+            setLoading(false)
+            findCheapestGoods()
+        }
+        console.log('cheapestFood: ', cheapestFood)
+    },[food,cheapestFood])
 
 
 

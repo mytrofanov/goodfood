@@ -6,7 +6,7 @@ import {MyVerticallyCenteredModal} from "../../Components/modalBuy";
 
 export function Cards({food, loading}) {
     const [putInBasket, setPutInBasket] = React.useState(false);
-    
+
     
     return (
         <div className={styles.cardsPage}>
@@ -14,6 +14,7 @@ export function Cards({food, loading}) {
                 {loading && <SpinnerComponent/>}
                 {food.map(food=>
                     <SingleCard key={food.id + food.name}
+                                foodId={food.id}
                                 goodsTypeName={food.category}
                                 goodsName={food.name}
                                 price={food.price}
