@@ -1,4 +1,6 @@
 import {Button, Modal} from "react-bootstrap";
+import closeButton from './../img/close.svg'
+import styles from './modalBuy.module.css'
 
 export function MyVerticallyCenteredModal(props) {
     return (
@@ -8,12 +10,10 @@ export function MyVerticallyCenteredModal(props) {
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
-            <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
-                    Modal heading
-                </Modal.Title>
-            </Modal.Header>
+
             <Modal.Body>
+                <img src={closeButton} alt="CloseButton" className={styles.closeButton}
+                     onClick={props.onHide}/>
                 <h4>Centered Modal</h4>
                 <p>
                     Cras mattis consectetur purus sit amet fermentum. Cras justo odio,

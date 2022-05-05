@@ -4,7 +4,7 @@ import SingleCard from "../../Components/singleCard";
 import SpinnerComponent from "../../Components/spinner";
 import {MyVerticallyCenteredModal} from "../../Components/modalBuy";
 
-export function Cards({food, loading}) {
+export function Cards({food, loading, cheapestFood}) {
     const [putInBasket, setPutInBasket] = React.useState(false);
 
     

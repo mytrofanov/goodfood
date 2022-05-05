@@ -12,7 +12,7 @@ function App() {
     function findCheapestGoods() {
         food.forEach((foodItem, index)=>{
             if (!cheapestFood) {dispatch(setCheapestFood(index))}
-            if (cheapestFood > foodItem.price) {setCheapestFood(index)}
+            if (cheapestFood > foodItem.price) {dispatch(setCheapestFood(index))}
         })
     }
 
@@ -41,7 +41,7 @@ function App() {
 
     return (
         <div className={styles.app}>
-             <Cards food={food} loading={loading}/>
+             <Cards food={food} loading={loading} cheapestFood={cheapestFood}/>
 
         </div>
     );
