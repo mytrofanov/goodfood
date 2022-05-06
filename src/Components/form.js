@@ -9,7 +9,7 @@ const Form = () => {
 
     const inputNameHandle = (text)=>{
         if (/^[A-z ]+$/.test(text)){
-            setName(text)
+            // setName(text)
             setError('')
             setErrorDescription('')
        } else {
@@ -33,7 +33,7 @@ const Form = () => {
                 className={error==='inputName' ? styles.badInputName : styles.inputName}
                 value={name}
                 onChange={e => {
-                    // setName(e.target.value)
+                    setName(e.target.value)
                     inputNameHandle(e.target.value)
                 }
                     }
