@@ -2,7 +2,7 @@
     width: 300px;
 
 }
-.input{
+.inputName{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -27,9 +27,61 @@
 
     color: rgba(0, 0, 0, 0.5);
 }
-.input :invalid{
-    border: 2px red;
+.badInputName{
+    width: 288px;
+    height: 56px;
+    border-color: red;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    border-radius: 16px;
+    letter-spacing: -0.02em;
+
+    background-image: url("./../img/redCross.svg");
+    background-position: right;
+    background-repeat: no-repeat;
 }
+.error {
+    width: 50px;
+    height: 28px;
+    left: 152px;
+    top: 555px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+
+    color: #000000;
+}
+
+.errorMessage {
+    width: 256px;
+    height: 16px;
+    left: 152px;
+    top: 643px;
+    text-align: left;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+
+    letter-spacing: -0.02em;
+
+    color: #E43F3F;
+
+}
+
+
+
+
 
 .orderButton{
     display: flex;
