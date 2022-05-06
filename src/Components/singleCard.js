@@ -6,7 +6,7 @@ import GoodsTypeName from "./smallComponents/goodsTypeName";
 import GoodsName from "./smallComponents/goodsName";
 import PriceBlock from "./smallComponents/priceBlock";
 
-const SingleCard = ({goodsTypeName, goodsName, price,setPutInBasket, foodId}) => {
+const SingleCard = ({goodsTypeName, goodsName, price,setPutInBasket, foodId, setSelectedFoodItem}) => {
     const id = useId()
 
 
@@ -18,7 +18,10 @@ const SingleCard = ({goodsTypeName, goodsName, price,setPutInBasket, foodId}) =>
                 <div className={styles.singleCardBottom}>
                     <PriceBlock price={price}/>
                     <div className={styles.basketBlock}
-                         onClick={()=>{setPutInBasket(true)}}>
+                         onClick={()=>{
+                             setPutInBasket(true)
+                             setSelectedFoodItem(foodId)
+                         }}>
                         <img src={basket} alt="Basket image" className={styles.basketImage}/>
                     </div>
                 </div>

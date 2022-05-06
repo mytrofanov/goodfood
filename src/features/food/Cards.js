@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './Cards.module.css';
 import SingleCard from "../../Components/singleCard";
 import SpinnerComponent from "../../Components/spinner";
@@ -6,35 +6,38 @@ import {MyVerticallyCenteredModal} from "../../Components/modalBuy";
 
 export function Cards({food, loading, cheapestFood}) {
     const [putInBasket, setPutInBasket] = React.useState(false);
+    const [selectedFoodItem, setSelectedFoodItem] = useState(null)
+    console.log('selectedFoodItem: ', selectedFoodItem)
+    console.log('food: ', food)
 
-    
     return (
         <div className={styles.cardsPage}>
             <div className={styles.cardsBlock}>
                 {loading && <SpinnerComponent/>}
-                {food.map(food=>
-                    <SingleCard key={food.id + food.name}
-                                foodId={food.id}
+                {food.map((food, index) =>
+                    <SingleCard key={index + food.name}
+                                foodId={index}
                                 goodsTypeName={food.category}
                                 goodsName={food.name}
                                 price={food.price}
                                 setPutInBasket={setPutInBasket}
+                                setSelectedFoodItem={setSelectedFoodItem}
                     />
                 )}
             </div>
-<div className={styles.bottom}>
-    <button className={styles.buyCheapest} onClick={() => setPutInBasket(true)}>
-        <span className={styles.buyCheapestName}>Buy Cheapest</span>
-    </button>
+            <div className={styles.bottom}>
+                <button className={styles.buyCheapest} onClick={() => {
+                    setPutInBasket(true)
+                    setSelectedFoodItem(cheapestFood)
+                }}>
+                    <span className={styles.buyCheapestName}>Buy Cheapest</span>
+                </button>
 
-    <MyVerticallyCenteredModal
-        show={putInBasket}
-        onHide={() => setPutInBasket(false)}
-    />
-</div>
-
-
-
+                <MyVerticallyCenteredModal
+                    show={putInBasket}
+                    onHide={() => setPutInBasket(false)}
+                />
+            </div>
 
 
         </div>

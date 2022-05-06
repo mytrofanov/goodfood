@@ -1,4 +1,4 @@
-import {Button, Modal} from "react-bootstrap";
+import {Modal} from "react-bootstrap";
 import closeButton from './../img/close.svg'
 import styles from './modalBuy.module.css'
 import React from "react";
@@ -6,7 +6,6 @@ import GoodsTypeName from "./smallComponents/goodsTypeName";
 import GoodsName from "./smallComponents/goodsName";
 import PriceBlock from "./smallComponents/priceBlock";
 import Form from "./form";
-import UserForm from "./formClassComponent";
 
 export function MyVerticallyCenteredModal(props) {
     return (
