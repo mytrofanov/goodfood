@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styles from "./form.module.css";
+import  "./form.css";
 
 const Form = ({category, foodName, price, setActive}) => {
     const [nameInputError, setNameInputError] = useState(false)
@@ -60,16 +60,15 @@ const Form = ({category, foodName, price, setActive}) => {
 
 
     return (
-        <div className={styles.formBlock}>
+        <div className={'formBlock'}>
             <form onSubmit={onFormSubmit}>
                 <label htmlFor="Name"></label>
-                {nameInputError && <div className={styles.error}>
-                    Error</div>}
+                {nameInputError && <div className={'error'}>Error</div>}
                 <input
                     key={'Name'}
                     type="text" id={'name'}
                     placeholder={'Name'}
-                    className={nameInputError ? styles.badInputName : styles.inputName}
+                    className={nameInputError ? 'inputName active' : 'inputName'}
                     value={name}
                     onChange={e => {
                         setName(e.target.value)
@@ -82,22 +81,20 @@ const Form = ({category, foodName, price, setActive}) => {
                             if (nameInputError) {
                                 setName('')
                                 setNameInputError(false)
-                                setErrorNameDescription('')
                             }
                         }}
                 />
-                {nameInputError && <div className={styles.errorMessage}>
+                {nameInputError && <div className={'errorMessage'}>
                     {errorNameDescription}</div>}
 
                 <label htmlFor="Phone"></label>
-                {phoneInputError && <div className={styles.error}>
-                    Error</div>}
+                {phoneInputError && <div className={'error'}>Error</div>}
                 <input
                     key={'Phone'}
                     type="text"
                     id={'phone'}
                     placeholder={'Phone'}
-                    className={phoneInputError ? styles.badInputName : styles.inputName}
+                    className={phoneInputError ? 'inputName active' : 'inputName'}
                     value={phone}
                     onChange={e =>
                         setPhone(e.target.value)}
@@ -113,9 +110,9 @@ const Form = ({category, foodName, price, setActive}) => {
                             }
                         }}
                 />
-                {phoneInputError && <div className={styles.errorMessage}>
+                {phoneInputError && <div className={'errorMessage'}>
                     {errorPhoneDescription}</div>}
-                <input type="submit" className={styles.orderButton} value={'ORDER'}/>
+                <input type="submit" className={'orderButton'} value={'ORDER'}/>
             </form>
         </div>
     );
