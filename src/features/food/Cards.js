@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import styles from './Cards.module.css';
 import SingleCard from "../../Components/singleCard";
 import SpinnerComponent from "../../Components/spinner";
-import {MyVerticallyCenteredModal} from "../../Components/modalBuy";
 import Modal from "../../Components/modal";
 import GoodsTypeName from "../../Components/smallComponents/goodsTypeName";
 import GoodsName from "../../Components/smallComponents/goodsName";
@@ -10,7 +9,7 @@ import PriceBlock from "../../Components/smallComponents/priceBlock";
 import Form from "../../Components/form";
 
 export function Cards({food, loading, cheapestFood}) {
-    const [putInBasket, setPutInBasket] = useState(true);
+    const [putInBasket, setPutInBasket] = useState(false);
     const [selectedFoodItem, setSelectedFoodItem] = useState(null)
 
     const category = food[selectedFoodItem] === undefined ? 'Loading...' : food[selectedFoodItem].category
@@ -49,6 +48,7 @@ export function Cards({food, loading, cheapestFood}) {
                             <PriceBlock price={price}/>
                         </div>
                         <Form
+                            setActive={setPutInBasket}
                             category={category}
                             foodName={name}
                             price={price}

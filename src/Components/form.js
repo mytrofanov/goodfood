@@ -1,31 +1,30 @@
 import React, {useState} from 'react';
 import styles from "./form.module.css";
 
-const Form = ({category, foodName, price}) => {
+const Form = ({category, foodName, price, setActive}) => {
     const [nameInputError, setNameInputError] = useState(false)
     const [phoneInputError, setPhoneInputError] = useState(false)
     const [errorNameDescription, setErrorNameDescription] = useState('')
     const [errorPhoneDescription, setErrorPhoneDescription] = useState('')
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
-    const [dataFromForm, setDataFromForm] = useState([])
-
 
     const onFormSubmit = (event) => {
         inputNameHandle(name)
         inputPhoneHandle(phone)
-        if (!nameInputError && !phoneInputError && name !=='' && phone !== '' ) {
-            setDataFromForm(prevState => prevState.push(
-                {
-                    'Food category': category,
-                    'Food name': foodName,
-                    'Food price': price,
-                    'Person name': name,
-                    'Person phone': phone
-                })
-            )
-            console.log(dataFromForm)
+        if (!nameInputError && !phoneInputError && name !== '' && phone !== '') {
+            let tempArray = {
+                'Food category': category,
+                'Food name': foodName,
+                'Food price': price,
+                'Person name': name,
+                'Person phone': phone
+            }
+
+            console.log(tempArray)
+            setActive(false)
         }
+
         event.preventDefault();
     }
 
