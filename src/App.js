@@ -16,7 +16,6 @@ function App() {
         })
     }
 
-
     const startApp = ()=> {
         dispatch(fetchFoodFromServer())
     }
@@ -36,12 +35,9 @@ function App() {
     },[food])
 
 
-
-
     return (
         <div className={styles.app}>
              <Cards food={food} loading={loading} cheapestFood={cheapestFood}/>
-
         </div>
     );
 }

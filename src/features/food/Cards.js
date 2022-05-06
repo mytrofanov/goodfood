@@ -5,7 +5,7 @@ import SpinnerComponent from "../../Components/spinner";
 import {MyVerticallyCenteredModal} from "../../Components/modalBuy";
 
 export function Cards({food, loading, cheapestFood}) {
-    const [putInBasket, setPutInBasket] = React.useState(false);
+    const [putInBasket, setPutInBasket] = useState(false);
     const [selectedFoodItem, setSelectedFoodItem] = useState(null)
 
     return (
@@ -31,13 +31,13 @@ export function Cards({food, loading, cheapestFood}) {
                     <span className={styles.buyCheapestName}>Buy Cheapest</span>
                 </button>
 
-                {selectedFoodItem &&
+
                     <MyVerticallyCenteredModal
                         item={food[Number(selectedFoodItem)] }
                         show={putInBasket}
                         onHide={() => setPutInBasket(false)}
                     />
-                }
+
 
             </div>
 
