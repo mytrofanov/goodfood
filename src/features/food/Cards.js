@@ -10,6 +10,7 @@ export function Cards({food, loading, cheapestFood}) {
     console.log('selectedFoodItem: ', selectedFoodItem)
     console.log('food: ', food)
 
+
     return (
         <div className={styles.cardsPage}>
             <div className={styles.cardsBlock}>
@@ -33,10 +34,14 @@ export function Cards({food, loading, cheapestFood}) {
                     <span className={styles.buyCheapestName}>Buy Cheapest</span>
                 </button>
 
-                <MyVerticallyCenteredModal
-                    show={putInBasket}
-                    onHide={() => setPutInBasket(false)}
-                />
+                {selectedFoodItem &&
+                    <MyVerticallyCenteredModal
+                        item={food[Number(selectedFoodItem)] }
+                        show={putInBasket}
+                        onHide={() => setPutInBasket(false)}
+                    />
+                }
+
             </div>
 
 
