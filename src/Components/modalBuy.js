@@ -17,10 +17,11 @@ export function MyVerticallyCenteredModal(props) {
         <Modal
             {...props}
             size="sm"
-            aria-labelledby="contained-modal-title-vcenter"
+            className='Modal'
             centered
+            // style={{borderRadius: '25px'}}
         >
-            <Modal.Body>
+
                 <img src={closeButton} alt="CloseButton" className={styles.closeButton}
                      onClick={props.onHide}/>
                 <div className={styles.goodsTitleBlock}>
@@ -35,7 +36,7 @@ export function MyVerticallyCenteredModal(props) {
                         price={price}
                     />
                 </div>
-            </Modal.Body>
+
         </Modal>
     );
 }

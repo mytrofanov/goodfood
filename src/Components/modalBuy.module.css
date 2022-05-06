@@ -4,8 +4,10 @@
     left: 97%;
 }
 .goodsTitleBlock {
-    width: 288px;
+    padding: 20px;
+    width: 100%;
     text-align: center;
+    border-radius: 16px;
 }
 .centeredPrice{
     margin-left: 25%;

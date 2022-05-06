@@ -10,7 +10,7 @@ export function Cards({food, loading, cheapestFood}) {
 
     return (
         <div className={styles.cardsPage}>
-            <div className={styles.cardsBlock}>
+                  <div className={styles.cardsBlock}>
                 {loading && <SpinnerComponent/>}
                 {food.map((food, index) =>
                     <SingleCard key={index + food.name}
