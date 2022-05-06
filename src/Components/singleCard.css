@@ -63,12 +63,42 @@
     color: #000000;
 }
 .basketBlock {
-    box-sizing: border-box;
-    background-image: url("./../img/Ellipse.png" );
-    background-position: center;
-    background-repeat: no-repeat;
+    /*box-sizing: border-box;*/
+    /*background-image: url("./../img/Ellipse.png" );*/
+    /*background-position: center;*/
+    /*background-repeat: no-repeat;*/
+    /*width: 64px;*/
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+
+    position: static;
     width: 64px;
+    height: 56px;
+    left: 224px;
+    top: 8px;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: #FFFFFF;
+    color: #4BCFA0;
 }
+.basketBlock:active{
+    background: #4BCFA0;
+    color: #FFFFFF;
+}
+
 .basketImage {
     width: 24px;
     margin-left: 50%;

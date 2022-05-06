@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from "../singleCard.module.css";
+import "../singleCard.css";
 
 const GoodsName = ({goodsName}) => {
     return (
-        <div className={styles.goodsName}>
+        <div className={'goodsName'}>
             {goodsName}
         </div>
     );

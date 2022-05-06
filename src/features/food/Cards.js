@@ -29,6 +29,7 @@ export function Cards({food, loading, cheapestFood}) {
                                 price={food.price}
                                 setPutInBasket={setPutInBasket}
                                 setSelectedFoodItem={setSelectedFoodItem}
+                                selectedFoodItem={selectedFoodItem}
                     />
                 )}
             </div>

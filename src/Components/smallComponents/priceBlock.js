@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from "../singleCard.module.css";
+import  "../singleCard.css";
 
 const PriceBlock = ({price}) => {
     return (
-        <div className={styles.priceBlock}>
-            <div className={styles.dollar}>
+        <div className={'priceBlock'}>
+            <div className={'dollar'}>
                 $
             </div>
-            <div className={styles.price}>
+            <div className={'price'}>
                 {price}
             </div>
         </div>

@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from "../singleCard.module.css";
+import "../singleCard.css";
 import SpinnerComponent from "../spinner";
 
 const GoodsTypeName = ({goodsTypeName}) => {
     return (
-        <div className={styles.goodsTypeName}>
+        <div className={'goodsTypeName'}>
             {!goodsTypeName ? <SpinnerComponent/> :  goodsTypeName}
         </div>
     );

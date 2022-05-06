@@ -1,26 +1,27 @@
 import React from 'react';
-import styles from './singleCard.module.css'
-import basket from './../img/shopping-bag.svg'
+import  './singleCard.css'
 import GoodsTypeName from "./smallComponents/goodsTypeName";
 import GoodsName from "./smallComponents/goodsName";
 import PriceBlock from "./smallComponents/priceBlock";
 
-const SingleCard = ({goodsTypeName, goodsName, price,setPutInBasket, foodId, setSelectedFoodItem}) => {
+const SingleCard = ({goodsTypeName, goodsName, price,setPutInBasket,
+                        foodId, setSelectedFoodItem, selectedFoodItem}) => {
 
     return (
-        <div className={styles.singleCard}>
-            <div className={styles.contentBlock}>
+        <div className={'singleCard'}>
+            <div className={'contentBlock'}>
                 <GoodsTypeName goodsTypeName={goodsTypeName}/>
                 <GoodsName goodsName={goodsName}/>
-                <div className={styles.singleCardBottom}>
+                <div className={'singleCardBottom'}>
                     <PriceBlock price={price}/>
-                    <div className={styles.basketBlock}
+                    <button className={selectedFoodItem===foodId ? 'basketBlock active' : 'basketBlock' }
                          onClick={()=>{
                              setPutInBasket(prev=>!prev)
                              setSelectedFoodItem(foodId)
                          }}>
-                        <img src={basket} alt="Basket image" className={styles.basketImage}/>
-                    </div>
+                        BUY
+                        {/*<img src={basket} alt="Basket image" className={styles.basketImage}/>*/}
+                    </button>
                 </div>
 
             </div>
