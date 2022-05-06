@@ -7,9 +7,6 @@ import {MyVerticallyCenteredModal} from "../../Components/modalBuy";
 export function Cards({food, loading, cheapestFood}) {
     const [putInBasket, setPutInBasket] = React.useState(false);
     const [selectedFoodItem, setSelectedFoodItem] = useState(null)
-    console.log('selectedFoodItem: ', selectedFoodItem)
-    console.log('food: ', food)
-
 
     return (
         <div className={styles.cardsPage}>

@@ -1,13 +1,16 @@
 import {Modal} from "react-bootstrap";
 import closeButton from './../img/close.svg'
 import styles from './modalBuy.module.css'
-import React from "react";
+import React, {useState} from "react";
 import GoodsTypeName from "./smallComponents/goodsTypeName";
 import GoodsName from "./smallComponents/goodsName";
 import PriceBlock from "./smallComponents/priceBlock";
 import Form from "./form";
 
+
 export function MyVerticallyCenteredModal(props) {
+
+
     return (
         <Modal
             {...props}
@@ -20,11 +23,15 @@ export function MyVerticallyCenteredModal(props) {
                      onClick={props.onHide}/>
                 <div className={styles.goodsTitleBlock}>
                     <GoodsTypeName goodsTypeName={props.item.category}/>
-                    <GoodsName goodsName={ props.item.name}/>
+                    <GoodsName goodsName={props.item.name}/>
                     <div className={styles.centeredPrice}>
                         <PriceBlock price={props.item.price}/>
                     </div>
-                    <Form/>
+                    <Form
+                        category={props.item.category}
+                        foodName={props.item.name}
+                        price={props.item.price}
+                    />
                 </div>
             </Modal.Body>
         </Modal>

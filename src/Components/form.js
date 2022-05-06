@@ -1,12 +1,32 @@
 import React, {useEffect, useState} from 'react';
 import styles from "./form.module.css";
 
-const Form = () => {
-    const [name, setName] = useState('')
-    const [phone, setPhone] = useState('')
+const Form = ({category, foodName, price}) => {
     const [nameInputError, setNameInputError] = useState(false)
     const [phoneInputError, setPhoneInputError] = useState(false)
     const [errorDescription, setErrorDescription] = useState('')
+    const [name, setName] = useState('')
+    const [phone, setPhone] = useState('')
+    const [dataFromForm, setDataFromForm] = useState([])
+
+
+    const onFormSubmit = (event) => {
+        inputNameHandle(name)
+        inputPhoneHandle(phone)
+        if (!nameInputError && !phoneInputError && name !=='' && phone !== '' ) {
+            setDataFromForm(prevState => prevState.push(
+                {
+                    'Food category': category,
+                    'Food name': foodName,
+                    'Food price': price,
+                    'Person name': name,
+                    'Person phone': phone
+                })
+            )
+            console.log(dataFromForm)
+        }
+        event.preventDefault();
+    }
 
     const inputNameHandle = (text) => {
         if (text === '') {
@@ -32,7 +52,7 @@ const Form = () => {
                 setPhoneInputError(false)
                 setErrorDescription('')
             }
-        }  else {
+        } else {
             setPhoneInputError(true)
             setErrorDescription('Only numbers allowed')
         }
@@ -41,12 +61,11 @@ const Form = () => {
 
     return (
         <div className={styles.formBlock}>
-            <form action="">
+            <form onSubmit={onFormSubmit}>
                 <label htmlFor="Name"></label>
                 {nameInputError && <div className={styles.error}>
                     Error</div>}
                 <input
-                    required
                     key={'Name'}
                     type="text" id={'name'}
                     placeholder={'Name'}
@@ -74,7 +93,6 @@ const Form = () => {
                 {phoneInputError && <div className={styles.error}>
                     Error</div>}
                 <input
-                    required
                     key={'Phone'}
                     type="text"
                     id={'phone'}

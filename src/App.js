@@ -33,8 +33,7 @@ function App() {
             setLoading(false)
             findCheapestGoods()
         }
-        console.log('cheapestFood: ', cheapestFood)
-    },[food,cheapestFood])
+    },[food])
 
 
 
