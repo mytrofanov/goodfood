@@ -22,20 +22,20 @@ export function MyVerticallyCenteredModal(props) {
             // style={{borderRadius: '25px'}}
         >
 
-                <img src={closeButton} alt="CloseButton" className={styles.closeButton}
-                     onClick={props.onHide}/>
-                <div className={styles.goodsTitleBlock}>
-                    <GoodsTypeName goodsTypeName={category}/>
-                    <GoodsName goodsName={name}/>
-                    <div className={styles.centeredPrice}>
-                        <PriceBlock price={price}/>
-                    </div>
-                    <Form
-                        category={category}
-                        foodName={name}
-                        price={price}
-                    />
-                </div>
+                {/*<img src={closeButton} alt="CloseButton" className={styles.closeButton}*/}
+                {/*     onClick={props.onHide}/>*/}
+                {/*<div className={styles.goodsTitleBlock}>*/}
+                {/*    <GoodsTypeName goodsTypeName={category}/>*/}
+                {/*    <GoodsName goodsName={name}/>*/}
+                {/*    <div className={styles.centeredPrice}>*/}
+                {/*        <PriceBlock price={price}/>*/}
+                {/*    </div>*/}
+                {/*    <Form*/}
+                {/*        category={category}*/}
+                {/*        foodName={name}*/}
+                {/*        price={price}*/}
+                {/*    />*/}
+                {/*</div>*/}
 
         </Modal>
     );

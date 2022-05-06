@@ -1,11 +1,14 @@
 import React from 'react';
-import styles from './modal.module.css'
+import  './modal.css'
+import closeButton from "../img/close.svg";
 
 const Modal = ({active, setActive, children}) => {
 
     return (
-        <div className={active ? styles.modal.active : styles.modal} onClick={()=>{setActive(false)}}>
-            <div className={active ? styles.modal_content.active : styles.modal_content} onClick={(event)=>{event.stopPropagation()}}>
+        <div className={active ? 'modalWin active' : 'modal'} onClick={()=>{setActive(false)}}>
+            <div className={active ? 'modal_content active' : 'modal_content'} onClick={(event)=>{event.stopPropagation()}}>
+                <img src={closeButton} alt="CloseButton" className={'closeModalButton'}
+                     onClick={()=>{setActive(false)}}/>
                 {children}
             </div>
         </div>

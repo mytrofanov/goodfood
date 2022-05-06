@@ -3,14 +3,24 @@ import styles from './Cards.module.css';
 import SingleCard from "../../Components/singleCard";
 import SpinnerComponent from "../../Components/spinner";
 import {MyVerticallyCenteredModal} from "../../Components/modalBuy";
+import Modal from "../../Components/modal";
+import GoodsTypeName from "../../Components/smallComponents/goodsTypeName";
+import GoodsName from "../../Components/smallComponents/goodsName";
+import PriceBlock from "../../Components/smallComponents/priceBlock";
+import Form from "../../Components/form";
 
 export function Cards({food, loading, cheapestFood}) {
-    const [putInBasket, setPutInBasket] = useState(false);
+    const [putInBasket, setPutInBasket] = useState(true);
     const [selectedFoodItem, setSelectedFoodItem] = useState(null)
+
+    const category = food[selectedFoodItem] === undefined ? 'Loading...' : food[selectedFoodItem].category
+    const name = food[selectedFoodItem] === undefined ? 'Loading...' : food[selectedFoodItem].name
+    const price = food[selectedFoodItem] === undefined ? 'Loading...' : food[selectedFoodItem].price
+
 
     return (
         <div className={styles.cardsPage}>
-                  <div className={styles.cardsBlock}>
+            <div className={styles.cardsBlock}>
                 {loading && <SpinnerComponent/>}
                 {food.map((food, index) =>
                     <SingleCard key={index + food.name}
@@ -31,12 +41,26 @@ export function Cards({food, loading, cheapestFood}) {
                     <span className={styles.buyCheapestName}>Buy Cheapest</span>
                 </button>
 
+                <Modal active={putInBasket} setActive={setPutInBasket}>
+                    <div className={styles.goodsTitleBlock}>
+                        <GoodsTypeName goodsTypeName={category}/>
+                        <GoodsName goodsName={name}/>
+                        <div className={styles.centeredPrice}>
+                            <PriceBlock price={price}/>
+                        </div>
+                        <Form
+                            category={category}
+                            foodName={name}
+                            price={price}
+                        />
+                    </div>
+                </Modal>
 
-                    <MyVerticallyCenteredModal
-                        item={food[Number(selectedFoodItem)] }
-                        show={putInBasket}
-                        onHide={() => setPutInBasket(false)}
-                    />
+                {/*<MyVerticallyCenteredModal*/}
+                {/*    item={food[Number(selectedFoodItem)] }*/}
+                {/*    show={putInBasket}*/}
+                {/*    onHide={() => setPutInBasket(false)}*/}
+                {/*/>*/}
 
 
             </div>
