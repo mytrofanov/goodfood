@@ -8,6 +8,8 @@ const Form = ({category, foodName, price, setActive}) => {
     const [errorPhoneDescription, setErrorPhoneDescription] = useState('')
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
+    let [inputNameCssClass, setInputNameCssClass] = useState('inputName')
+    let [inputPhoneCssClass, setInputPhoneCssClass] = useState('inputName')
 
     const onFormSubmit = (event) => {
         inputNameHandle(name)
@@ -31,33 +33,38 @@ const Form = ({category, foodName, price, setActive}) => {
     const inputNameHandle = (text) => {
         if (text === '') {
             setNameInputError(true)
+            setInputNameCssClass('inputName inputError')
             setErrorNameDescription('This field in required')
         } else if (/^[A-z ]+$/.test(text)) {
             setNameInputError(false)
-            setErrorNameDescription('')
+            setInputNameCssClass('inputName active')
         } else {
             setNameInputError(true)
+            setInputNameCssClass('inputName inputError')
             setErrorNameDescription('Only letters allowed')
         }
     }
     const inputPhoneHandle = (phone) => {
         if (phone === '') {
             setPhoneInputError(true)
+            setInputPhoneCssClass('inputName inputError')
             setErrorPhoneDescription('This field in required')
         } else if (/^\d+$/.test(phone)) {
             if (phone.length !== 12) {
                 setPhoneInputError(true)
+                setInputPhoneCssClass('inputName inputError')
                 setErrorPhoneDescription('Should contain 12 characters')
             } else {
                 setPhoneInputError(false)
+                setInputPhoneCssClass('inputName active')
                 setErrorPhoneDescription('')
             }
         } else {
             setPhoneInputError(true)
+            setInputPhoneCssClass('inputName inputError')
             setErrorPhoneDescription('Only numbers allowed')
         }
     }
-
 
     return (
         <div className={'formBlock'}>
@@ -68,7 +75,7 @@ const Form = ({category, foodName, price, setActive}) => {
                     key={'Name'}
                     type="text" id={'name'}
                     placeholder={'Name'}
-                    className={nameInputError ? 'inputName active' : 'inputName'}
+                    className={inputNameCssClass}
                     value={name}
                     onChange={e => {
                         setName(e.target.value)
@@ -81,6 +88,7 @@ const Form = ({category, foodName, price, setActive}) => {
                             if (nameInputError) {
                                 setName('')
                                 setNameInputError(false)
+                                setInputNameCssClass('inputName')
                             }
                         }}
                 />
@@ -94,7 +102,7 @@ const Form = ({category, foodName, price, setActive}) => {
                     type="text"
                     id={'phone'}
                     placeholder={'Phone'}
-                    className={phoneInputError ? 'inputName active' : 'inputName'}
+                    className={inputPhoneCssClass}
                     value={phone}
                     onChange={e =>
                         setPhone(e.target.value)}
@@ -106,7 +114,6 @@ const Form = ({category, foodName, price, setActive}) => {
                             if (phoneInputError) {
                                 setPhone('')
                                 setPhoneInputError(false)
-                                setErrorNameDescription('')
                             }
                         }}
                 />

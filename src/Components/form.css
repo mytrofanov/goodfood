@@ -20,12 +20,17 @@
 
     color: rgba(0, 0, 0, 0.5);
 }
-.inputName.active{
+.inputName.inputError{
     background-image: url("./../img/redCross.svg");
     background-position: 95%;
     background-repeat: no-repeat;
     border: 1px solid red;
 }
+.inputName.active{
+    border: 1px solid green;
+    background-color: white;
+}
+
 .error {
     width: 50px;
     height: 28px;
