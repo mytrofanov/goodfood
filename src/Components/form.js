@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import styles from "./form.module.css";
 
 const Form = ({category, foodName, price}) => {
     const [nameInputError, setNameInputError] = useState(false)
     const [phoneInputError, setPhoneInputError] = useState(false)
-    const [errorDescription, setErrorDescription] = useState('')
+    const [errorNameDescription, setErrorNameDescription] = useState('')
+    const [errorPhoneDescription, setErrorPhoneDescription] = useState('')
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
     const [dataFromForm, setDataFromForm] = useState([])
@@ -31,30 +32,30 @@ const Form = ({category, foodName, price}) => {
     const inputNameHandle = (text) => {
         if (text === '') {
             setNameInputError(true)
-            setErrorDescription('This field in required')
+            setErrorNameDescription('This field in required')
         } else if (/^[A-z ]+$/.test(text)) {
             setNameInputError(false)
-            setErrorDescription('')
+            setErrorNameDescription('')
         } else {
             setNameInputError(true)
-            setErrorDescription('Only letters allowed')
+            setErrorNameDescription('Only letters allowed')
         }
     }
     const inputPhoneHandle = (phone) => {
         if (phone === '') {
             setPhoneInputError(true)
-            setErrorDescription('This field in required')
+            setErrorPhoneDescription('This field in required')
         } else if (/^\d+$/.test(phone)) {
             if (phone.length !== 12) {
                 setPhoneInputError(true)
-                setErrorDescription('Should contain 12 characters')
+                setErrorPhoneDescription('Should contain 12 characters')
             } else {
                 setPhoneInputError(false)
-                setErrorDescription('')
+                setErrorPhoneDescription('')
             }
         } else {
             setPhoneInputError(true)
-            setErrorDescription('Only numbers allowed')
+            setErrorPhoneDescription('Only numbers allowed')
         }
     }
 
@@ -82,12 +83,12 @@ const Form = ({category, foodName, price}) => {
                             if (nameInputError) {
                                 setName('')
                                 setNameInputError(false)
-                                setErrorDescription('')
+                                setErrorNameDescription('')
                             }
                         }}
                 />
                 {nameInputError && <div className={styles.errorMessage}>
-                    {errorDescription}</div>}
+                    {errorNameDescription}</div>}
 
                 <label htmlFor="Phone"></label>
                 {phoneInputError && <div className={styles.error}>
@@ -109,12 +110,12 @@ const Form = ({category, foodName, price}) => {
                             if (phoneInputError) {
                                 setPhone('')
                                 setPhoneInputError(false)
-                                setErrorDescription('')
+                                setErrorNameDescription('')
                             }
                         }}
                 />
                 {phoneInputError && <div className={styles.errorMessage}>
-                    {errorDescription}</div>}
+                    {errorPhoneDescription}</div>}
                 <input type="submit" className={styles.orderButton} value={'ORDER'}/>
             </form>
         </div>
