@@ -105,6 +105,41 @@
     margin-top: 35%;
     transform: translateX(-50%);
 }
+@media only screen and (max-height: 375px) {
+    .singleCard {
+        height: 190px;
+    }
+    .goodsTypeName {
+        font-size: 12px;
+        line-height: 16px;
+        height: 10px;
+    }
+    .goodsName {
+        height: 25px;
+        font-size: 25px;
+        line-height: 45px;
+
+    }
+    .priceBlock {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+    }
+    .dollar {
+        height: 17px;
+        font-size: 17px;
+        padding-top: 1px;
+        padding-right: 4px;
+        color: #000000;
+    }
+    .price {
+        height: 35px;
+        font-size: 35px;
+        line-height: 35px;
+
+    }
+}
+
 
 @media only screen and (max-width: 480px) {
     .singleCard{
