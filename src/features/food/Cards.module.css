@@ -59,7 +59,7 @@
     text-align: left;
 }
 
-@media (max-width: 320px) {
+@media only screen and (max-width: 320px) {
     .cardsBlock{
         width: 100%;
     }
@@ -68,46 +68,50 @@
     }
     .buyCheapestButton{
         position: fixed;
-        right: 15%;
+        left: -90px;
+        top: 80%;
         z-index: 2;
     }
 }
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
     .cardsBlock{
         width: 100%;
     }
     .bottom{
-        height: 50px;
+        height: 100px;
     }
     .buyCheapestButton{
         position: fixed;
         right: 20%;
-        bottom: -20%;
+        top: 80%;
         z-index: 2;
+    }
+}
+@media only screen and (min-width: 540px) {
+    .cardsBlock{
+        width: 70%;
+    }
+
+    .buyCheapestButton{
+        position: fixed;
+        right: 30%;
+        top: 80%;
+        z-index: 2;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .cardsBlock{
+        width: 90%;
+    }
+    .bottom{
+        height: 100px;
+    }
+    .buyCheapestButton{
+        position: static;
+
     }
 }
 
 
-/*@media (min-height: 650px) {*/
-/*    .bottom{*/
-/*        height: 70px;*/
-/*    }*/
-/*    .buyCheapestButton{*/
-/*        position: fixed;*/
-/*        bottom: -10%;*/
-/*        z-index: 2;*/
-/*    }*/
-/*}*/
 
 
-/*@media (min-height: 740px) {*/
-/*    .bottom{*/
-/*        height: 70px;*/
-/*    }*/
-/*    .buyCheapestButton{*/
-/*        position: fixed;*/
-/*        right: 20%;*/
-/*        bottom: -15%;*/
-/*        z-index: 2;*/
-/*    }*/
-/*}*/
