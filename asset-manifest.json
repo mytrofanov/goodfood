@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/goodfood/static/css/main.0268e52d.css",
+    "main.js": "/goodfood/static/js/main.e301951c.js",
+    "index.html": "/goodfood/index.html",
+    "static/media/close.svg": "/goodfood/static/media/close.0ef14903cf4fe4022e5ee19f53eaa190.svg",
+    "static/media/redCross.svg": "/goodfood/static/media/redCross.17a9a679b92b5d58500e.svg",
+    "static/media/arrow-right.svg": "/goodfood/static/media/arrow-right.2859eaf0aa9cbb0001d9.svg",
+    "main.0268e52d.css.map": "/goodfood/static/css/main.0268e52d.css.map",
+    "main.e301951c.js.map": "/goodfood/static/js/main.e301951c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0268e52d.css",
+    "static/js/main.e301951c.js"
+  ]
+}
