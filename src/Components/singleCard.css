@@ -130,10 +130,17 @@
 @media only screen and (min-width: 768px) {
     .singleCard{
         height: 230px;
-        width: 44%;
+        width: 300px;
     }
     .price {
         width: 130px;
+    }
+
+}
+@media only screen and (min-width: 992px) {
+    .singleCard{
+        height: 256px;
+        width: 352px;
     }
 
 }

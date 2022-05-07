@@ -73,6 +73,7 @@
         z-index: 2;
     }
 }
+
 @media only screen and (max-width: 480px) {
     .cardsBlock{
         width: 100%;
@@ -99,6 +100,19 @@
         z-index: 2;
     }
 }
+@media only screen and (min-width: 650px) {
+    .cardsBlock{
+        width: 50%;
+    }
+    .bottom{
+        height: 100px;
+    }
+    .buyCheapestButton{
+        position: static;
+
+    }
+}
+
 @media only screen and (min-width: 768px) {
     .cardsBlock{
         width: 90%;
@@ -111,7 +125,21 @@
 
     }
 }
-
+@media only screen and (min-width: 912px) {
+    .cardsBlock{
+        width: 80%;
+    }
+}
+@media only screen and (min-width: 1180px) {
+    .cardsBlock{
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 1300px) {
+    .cardsBlock{
+        width: 90%;
+    }
+}
 
 
 
