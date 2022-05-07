@@ -33,10 +33,6 @@
 .error {
     width: 50px;
     height: 28px;
-    left: 152px;
-    top: 555px;
-
-
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -87,26 +83,49 @@
 
     color: #FFFFFF;
 }
+/*HEIGHT*/
+/*@media only screen and (min-height: 280px) {*/
+/*    .orderButton{*/
+/*        margin-top: 1px;*/
+/*        padding: 1px 103px;*/
+/*    }*/
+/*    .inputName{*/
+/*        padding: 1px;*/
+/*    }*/
+/*    .error {*/
+/*        height: 15px;*/
+/*        font-size: 16px;*/
+/*        line-height: 16px;*/
+/*    }*/
+/*}*/
 
-@media only screen and (max-width: 320px) {
-    .formBlock{
-        width: 90%;
-    }
-    .inputName{
-        width: 190px;
-    }
-    .orderButton{
-       padding: 16px 5px;
-        width: 190px;
-    }
-
-}
-@media only screen and (max-height: 375px) {
+@media only screen and (max-height: 414px) {
     .orderButton{
         margin-top: 10px;
         padding: 5px 103px;
     }
     .inputName{
-        padding: 10px;
+        padding: 8px;
+    }
+    .error {
+        height: 15px;
+        font-size: 16px;
+        line-height: 16px;
     }
 }
+
+/*WIDTH*/
+@media only screen and (max-width: 390px) {
+    .formBlock{
+        width: 100%;
+    }
+    .inputName{
+        width: 100%;
+    }
+    .orderButton{
+       padding: 16px 5px;
+        width: 100%;
+    }
+
+}
+

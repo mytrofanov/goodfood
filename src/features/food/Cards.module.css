@@ -58,9 +58,14 @@
     margin-left: 25%;
     text-align: left;
 }
+/*HEIGHT*/
+@media only screen and (max-height: 280px) {
+    .goodsTitleBlock {
+        padding: 10px;
+    }
+}
 
-
-
+/*WIDTH*/
 @media only screen and (max-width: 320px) {
     .cardsBlock{
         width: 100%;

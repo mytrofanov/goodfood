@@ -43,11 +43,19 @@
     margin-left: 25%;
     text-align: left;
 }
-@media only screen and (max-height: 375px) {
+
+/*HEIGHT*/
+@media only screen and (max-height: 280px) {
+    .modal_content {
+        padding: 0px;
+    }
+}
+@media only screen and (max-height: 414px) {
     .modal_content {
         padding: 1px;
     }
 }
+/*WIDTH*/
 @media only screen and (max-width: 320px) {
     .modal_content {
          width: 90%;
