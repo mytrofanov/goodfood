@@ -33,13 +33,16 @@ export function Cards({food, loading, cheapestFood}) {
                     />
                 )}
             </div>
-            <div className={styles.bottom}>
-                <button className={styles.buyCheapest} onClick={() => {
-                    setPutInBasket(true)
-                    setSelectedFoodItem(cheapestFood)
-                }}>
-                    <span className={styles.buyCheapestName}>Buy Cheapest</span>
-                </button>
+            {!putInBasket &&
+                <div className={styles.bottom}>
+                    <button className={styles.buyCheapestButton} onClick={() => {
+                        setPutInBasket(true)
+                        setSelectedFoodItem(cheapestFood)
+                    }}>
+                        <span className={styles.buyCheapestName}>Buy Cheapest</span>
+                    </button>
+                </div>
+            }
 
                 <Modal active={putInBasket} setActive={setPutInBasket}>
                     <div className={styles.goodsTitleBlock}>
@@ -57,14 +60,6 @@ export function Cards({food, loading, cheapestFood}) {
                     </div>
                 </Modal>
 
-                {/*<MyVerticallyCenteredModal*/}
-                {/*    item={food[Number(selectedFoodItem)] }*/}
-                {/*    show={putInBasket}*/}
-                {/*    onHide={() => setPutInBasket(false)}*/}
-                {/*/>*/}
-
-
-            </div>
 
 
         </div>

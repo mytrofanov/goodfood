@@ -105,3 +105,29 @@
     margin-top: 35%;
     transform: translateX(-50%);
 }
+
+@media (max-width: 320px) {
+    .singleCard{
+        height: 200px;
+    }
+    .goodsName{
+        font-size: 30px;
+    }
+    .singleCardBottom{
+        padding-top: 0;
+    }
+    .dollar{
+        font-size: 25px;
+    }
+    .price {
+        font-size: 40px;
+        width: 120px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .singleCard{
+        width: 90%;
+    }
+}

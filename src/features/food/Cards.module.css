@@ -19,7 +19,7 @@
 .bottom {
     height: 200px;
 }
-.buyCheapest {
+.buyCheapestButton {
     border: 0;
     margin: 50px 0 40% 40%;
     display: flex;
@@ -29,8 +29,6 @@
 
     width: 235px;
     height: 60px;
-    left: 610px;
-    top: 725px;
 
     background: #50DAA8;
     border-radius: 16px;
@@ -60,3 +58,56 @@
     margin-left: 25%;
     text-align: left;
 }
+
+@media (max-width: 320px) {
+    .cardsBlock{
+        width: 100%;
+    }
+    .bottom{
+        height: 50px;
+    }
+    .buyCheapestButton{
+        position: fixed;
+        right: 15%;
+        z-index: 2;
+    }
+}
+@media (max-width: 480px) {
+    .cardsBlock{
+        width: 100%;
+    }
+    .bottom{
+        height: 50px;
+    }
+    .buyCheapestButton{
+        position: fixed;
+        right: 20%;
+        bottom: -20%;
+        z-index: 2;
+    }
+}
+
+
+/*@media (min-height: 650px) {*/
+/*    .bottom{*/
+/*        height: 70px;*/
+/*    }*/
+/*    .buyCheapestButton{*/
+/*        position: fixed;*/
+/*        bottom: -10%;*/
+/*        z-index: 2;*/
+/*    }*/
+/*}*/
+
+
+/*@media (min-height: 740px) {*/
+/*    .bottom{*/
+/*        height: 70px;*/
+/*    }*/
+/*    .buyCheapestButton{*/
+/*        position: fixed;*/
+/*        right: 20%;*/
+/*        bottom: -15%;*/
+/*        z-index: 2;*/
+/*    }*/
+/*}*/
