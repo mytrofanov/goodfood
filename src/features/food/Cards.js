@@ -7,6 +7,7 @@ import GoodsTypeName from "../../Components/smallComponents/goodsTypeName";
 import GoodsName from "../../Components/smallComponents/goodsName";
 import PriceBlock from "../../Components/smallComponents/priceBlock";
 import Form from "../../Components/form";
+import BuyCheapestButton from "../../Components/smallComponents/buyCheapeastButton";
 
 export function Cards({food, loading, cheapestFood}) {
     const [putInBasket, setPutInBasket] = useState(false);
@@ -15,7 +16,10 @@ export function Cards({food, loading, cheapestFood}) {
     const category = food[selectedFoodItem] === undefined ? 'Loading...' : food[selectedFoodItem].category
     const name = food[selectedFoodItem] === undefined ? 'Loading...' : food[selectedFoodItem].name
     const price = food[selectedFoodItem] === undefined ? 'Loading...' : food[selectedFoodItem].price
-
+    const actionOnClick = ()=> {
+        setPutInBasket(true)
+        setSelectedFoodItem(cheapestFood)
+    }
 
     return (
         <div className={styles.cardsPage}>
@@ -35,12 +39,9 @@ export function Cards({food, loading, cheapestFood}) {
             </div>
             {!putInBasket &&
                 <div className={styles.bottom}>
-                    <button className={styles.buyCheapestButton} onClick={() => {
-                        setPutInBasket(true)
-                        setSelectedFoodItem(cheapestFood)
-                    }}>
-                        <span className={styles.buyCheapestName}>Buy Cheapest</span>
-                    </button>
+                    <BuyCheapestButton actionOnClick={actionOnClick}>
+                        <span className={styles.buyCheapestName} >Buy Cheapest</span>
+                    </BuyCheapestButton>
                 </div>
             }
 
@@ -59,9 +60,6 @@ export function Cards({food, loading, cheapestFood}) {
                         />
                     </div>
                 </Modal>
-
-
-
         </div>
     );
 }

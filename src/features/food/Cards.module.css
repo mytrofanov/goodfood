@@ -34,6 +34,10 @@
     border-radius: 16px;
     color: #FFFFFF;
 }
+.buyCheapestButton:hover{
+    background: #50DAA8;
+    color: #FFFFFF;
+}
 .buyCheapestName {
     width: 139px;
     height: 28px;

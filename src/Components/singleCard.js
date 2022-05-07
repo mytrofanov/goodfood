@@ -1,11 +1,18 @@
 import React from 'react';
-import  './singleCard.css'
+import './singleCard.css'
 import GoodsTypeName from "./smallComponents/goodsTypeName";
 import GoodsName from "./smallComponents/goodsName";
 import PriceBlock from "./smallComponents/priceBlock";
+import ButtonBuy from "./smallComponents/buttonBuy";
 
-const SingleCard = ({goodsTypeName, goodsName, price,setPutInBasket,
-                        foodId, setSelectedFoodItem, selectedFoodItem}) => {
+const SingleCard = ({
+                        goodsTypeName, goodsName, price, setPutInBasket,
+                        foodId, setSelectedFoodItem, selectedFoodItem
+                    }) => {
+    const actionOnClick = () => {
+        setPutInBasket(prev => !prev)
+        setSelectedFoodItem(foodId)
+    }
 
     return (
         <div className={'singleCard'}>
@@ -14,14 +21,10 @@ const SingleCard = ({goodsTypeName, goodsName, price,setPutInBasket,
                 <GoodsName goodsName={goodsName}/>
                 <div className={'singleCardBottom'}>
                     <PriceBlock price={price}/>
-                    <button className={selectedFoodItem===foodId ? 'basketBlock active' : 'basketBlock' }
-                         onClick={()=>{
-                             setPutInBasket(prev=>!prev)
-                             setSelectedFoodItem(foodId)
-                         }}>
-                        BUY
-                        {/*<img src={basket} alt="Basket image" className={styles.basketImage}/>*/}
-                    </button>
+                    <ButtonBuy
+                        changebleClass={selectedFoodItem}
+                        condition={foodId}
+                        actionOnClick={actionOnClick}/>
                 </div>
 
             </div>

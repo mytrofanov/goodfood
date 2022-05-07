@@ -64,12 +64,6 @@
     color: #000000;
 }
 .basketBlock {
-    /*box-sizing: border-box;*/
-    /*background-image: url("./../img/Ellipse.png" );*/
-    /*background-position: center;*/
-    /*background-repeat: no-repeat;*/
-    /*width: 64px;*/
-
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -87,14 +81,17 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    /* identical to box height, or 150% */
 
     letter-spacing: 0.04em;
     text-transform: uppercase;
     background: #FFFFFF;
     color: #4BCFA0;
 }
-.basketBlock.active{
+.basketBlock.active {
+    background: #4BCFA0;
+    color: #FFFFFF;
+}
+.basketBlock:hover{
     background: #4BCFA0;
     color: #FFFFFF;
 }

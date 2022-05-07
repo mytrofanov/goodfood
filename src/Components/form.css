@@ -33,6 +33,7 @@
 .error {
     width: 50px;
     height: 28px;
+
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -45,19 +46,15 @@
 .errorMessage {
     width: 256px;
     height: 16px;
-    left: 152px;
-    top: 643px;
+
     text-align: left;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    /* identical to box height, or 133% */
-
     letter-spacing: -0.02em;
 
     color: #E43F3F;
-
 }
 
 .orderButton{
@@ -83,22 +80,14 @@
 
     color: #FFFFFF;
 }
-/*HEIGHT*/
-/*@media only screen and (min-height: 280px) {*/
-/*    .orderButton{*/
-/*        margin-top: 1px;*/
-/*        padding: 1px 103px;*/
-/*    }*/
-/*    .inputName{*/
-/*        padding: 1px;*/
-/*    }*/
-/*    .error {*/
-/*        height: 15px;*/
-/*        font-size: 16px;*/
-/*        line-height: 16px;*/
-/*    }*/
-/*}*/
+.orderButton:hover{
+    background-image: url("./../img/arrow-right.svg");
+    background-position: 70%;
+    background-repeat: no-repeat;
+}
 
+
+/*HEIGHT*/
 @media only screen and (max-height: 414px) {
     .orderButton{
         margin-top: 10px;
