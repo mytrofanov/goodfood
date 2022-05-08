@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import {foodAPI} from "../../Api/Api";
+import 'regenerator-runtime/runtime'
 
 export const foodSlice = createSlice({
     name: 'food',

@@ -1,3 +1,4 @@
+import React from 'react'
 import {Cards} from "./features/food/Cards";
 import {fetchFoodFromServer, setCheapestFood} from "./features/food/foodSlice";
 import {useDispatch, useSelector} from "react-redux";
